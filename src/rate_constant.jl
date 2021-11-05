@@ -135,6 +135,11 @@ function compute_k_cq(
     V_dl_interp = calculate_Vdl_interp(model.dos.interp_func, Vq_min, Vq_max, C_dl)
     V_dl = V_dl_interp(V_app)
     V_q = V_app - V_dl
+    if V_q < 0
+           E_min = E_min .- V_q
+    elseif V_q > 0
+           E_max = E_max .- V_q
+    end
     quadgk(integrand(model, V_dl, ox; kT = kT, V_q = V_q), E_min, E_max)[1]
 end
 
@@ -151,5 +156,10 @@ function compute_k_cq(
     V_dl_interp = calculate_Vdl_interp(model.dos.interp_func, Vq_min, Vq_max, C_dl)
     V_dl = V_dl_interp(V_app)
     V_q = V_app - V_dl
+    if V_q < 0
+           E_min = E_min .- V_q
+    elseif V_q > 0
+           E_max = E_max .- V_q
+    end
     quadgk(integrand(model, V_dl; kT = kT, V_q = V_q), E_min, E_max)[1]
 end
