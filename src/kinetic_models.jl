@@ -207,6 +207,7 @@ function integrand(
         end
         exp.(exp_arg)
     end
+    
     fd(E) = ox ? 1 .- fermi_dirac(E; kT = kT) : fermi_dirac(E; kT = kT)
     E -> mhcd.A .* mhcd.dos.interp_func.(E .+ V_q) .* fd(E) .* marcus_term(E)
 end

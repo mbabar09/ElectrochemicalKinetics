@@ -60,8 +60,8 @@ function compute_k(
             Vq_min = Vq_min,
             Vq_max = Vq_max,
             kT = kT,
-            E_min = min(E_min, E_min-Vq_min),
-            E_max = max(E_max, E_max-Vq_max),
+            E_min = E_min,
+            E_max = E_max,
         )
     else
         # invoke(
@@ -95,8 +95,8 @@ function compute_k(
             V_app,
             model;
             kT = kT,
-            E_min = max(E_min, E_min-Vq_min),
-            E_max = min(E_max, E_max-Vq_max),
+            E_min = E_min,
+            E_max = E_max,
             C_dl = C_dl,
             Vq_min = Vq_min,
             Vq_max = Vq_max,
