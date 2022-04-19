@@ -67,7 +67,8 @@ function get_dos(dd::Matrix; Ef=0, cut_energy=false)
     average_dos = mean(dos_data[:,2]) # for whole structure
     # interpolate
     E_step = mean(dos_data[2:end,1].-dos_data[1:end-1,1])
-    dos_interp = scale(interpolate(dos_data[:,2], BSpline(Linear())), range(E_min, E_max+0.0001, step=E_step))
+    #dos_interp = scale(interpolate(dos_data[:,2], BSpline(Linear())), range(E_min, E_max+0.0001, step=E_step))
+    dos_interp = scale(interpolate(dos_data[:,2], BSpline(Linear())), range(E_min, E_max, step=E_step))
     return dos_interp, average_dos, E_min, E_max
 end
 
