@@ -13,6 +13,7 @@ export KineticModel, IntegralModel
 export Marcus, MarcusHushChidsey, MarcusHushChidseyDOS
 
 include("quantum_capacitance.jl")
+export calculate_Vdl_interp
 
 include("rate_constant.jl")
 export compute_k, compute_k_cq
