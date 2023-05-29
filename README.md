@@ -1,6 +1,6 @@
 # ElectrochemicalKinetics.jl
 
-This is fork of the package originally developed by Rachel C. Kurchin ([Repository](https://github.com/BattModels/ElectrochemicalKinetics.jl)). I have made changes in src files for compatibility with [PNP_solve](https://github.com/mbabar09/PNP_solve/)
+This is a fork of the package originally developed by Rachel C. Kurchin ([Repository](https://github.com/BattModels/ElectrochemicalKinetics.jl)). I have made changes in src files for compatibility with [PNP_solve](https://github.com/mbabar09/PNP_solve/)
 This package implements a variety of models for rates of electrochemical reactions. The goal is to have a generic interface where different model types can be easily swapped in.
 
 ## Usage/Examples
